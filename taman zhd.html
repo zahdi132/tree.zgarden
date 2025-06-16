@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tree.Z Garden</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #3a5a40;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 20px 40px;
+      flex-wrap: wrap;
+    }
+    header img {
+      height: 100px;
+      max-width: 160px;
+      object-fit: contain;
+      margin-right: 20px;
+    }
+    .header-text h1 {
+      font-size: 2.2em;
+      margin: 0;
+    }
+    .header-text p {
+      margin: 5px 0 0;
+      font-size: 1em;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #588157;
+    }
+    nav a {
+      color: white;
+      padding: 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background-color: #3a5a40;
+    }
+    .container {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .filter-buttons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .filter-buttons button {
+      background-color: #588157;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .filter-buttons button:hover {
+      background-color: #3a5a40;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      overflow: hidden;
+      display: none;
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+    }
+    .gallery-caption {
+      padding: 15px;
+      font-size: 0.95em;
+    }
+    .layanan {
+      background-color: #e9f5ec;
+      border-left: 5px solid #3a5a40;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    .kategori-keterangan {
+      margin: 30px 0 10px;
+      font-weight: bold;
+      color: #3a5a40;
+      font-size: 1.2em;
+    }
+    footer {
+      background-color: #3a5a40;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+    .testimoni {
+      background-color: #fff;
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .testimoni h2 {
+      color: #3a5a40;
+      text-align: center;
+    }
+    .testi-box {
+      background: #e9f5ec;
+      border-left: 5px solid #3a5a40;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .testi-box p {
+      margin: 0;
+    }
+    .testi-box strong {
+      display: block;
+      margin-top: 10px;
+      color: #3a5a40;
+    }
+  </style>
+  <script>
+    function filterGallery(category) {
+      const items = document.querySelectorAll('.gallery-item');
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <img src="WhatsApp Image 2024-06-07 at 05.14.07.jpeg" alt="Tree.Z Garden Logo">
+    <div class="header-text">
+      <h1>Tree.Z Garden</h1>
+      <p>Professional Gardener & Jasa Taman Universal</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#tentang">Tentang Kami</a>
+    <a href="#layanan">Layanan</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#testimoni">Testimoni</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
+  <div class="container" id="beranda">
+    <h2>Selamat Datang di Tree.Z Garden</h2>
+    <p>Terima kasih telah mengunjungi Tree.Z Garden! Kami hadir untuk memberikan sentuhan hijau yang indah dan harmoni pada lingkungan Anda. Dengan pengalaman, kreativitas, dan dedikasi tinggi, kami siap membantu Anda mewujudkan taman impian yang tidak hanya memanjakan mata, tetapi juga menghadirkan ketenangan dan kenyamanan di setiap sudut ruang Anda.</p>
+  </div>
+
+  <div class="container" id="tentang">
+    <h2>Tentang Kami</h2>
+    <p><strong>Tree.Z Garden</strong> adalah penyedia jasa taman dan lanskap profesional yang berbasis di Indonesia. Kami hadir dengan visi menghijaukan ruang hidup Anda melalui desain taman yang estetis, fungsional, dan menyatu dengan alam. Mulai dari taman minimalis, vertikal garden, hingga kolam natural—kami melayani dengan sepenuh hati dan dedikasi tinggi.
+
+Dengan pengalaman dan kreativitas tim kami, Tree.Z Garden tidak hanya menawarkan keindahan visual, tetapi juga kenyamanan dan keseimbangan alami di setiap proyek yang kami kerjakan. Kami percaya, setiap ruang layak mendapatkan sentuhan hijau yang menyegarkan.</p>
+  </div>
+
+  <div class="container" id="layanan">
+    <h2>Layanan Kami</h2>
+    <div class="layanan">
+      <h3>✅ Pembuatan Taman</h3>
+      <p>Taman minimalis, tropis, modern, taman Jepang, rooftop garden dan taman vertikal.</p>
+      <h3>✅ Perawatan Taman</h3>
+      <p>Jasa perawatan rutin taman rumah, kantor, dan area publik dengan tim profesional.</p>
+      <h3>✅ Kolam Minimalis & Natural Pond</h3>
+      <p>Desain dan pembuatan kolam taman yang alami dan menyatu dengan lanskap sekitarnya.</p>
+      <h3>✅ Konsultasi Lanskap</h3>
+      <p>Konsultasi gratis untuk desain taman dan rekomendasi penataan terbaik untuk area Anda.</p>
+    </div>
+  </div>
+
+  <div class="container" id="galeri">
+    <h2>Galeri Proyek</h2>
+    <div class="filter-buttons">
+      <button onclick="filterGallery('all')">Semua</button>
+      <button onclick="filterGallery('taman')">Taman</button>
+      <button onclick="filterGallery('kolam')">Kolam</button>
+    </div>
+
+    <div class="kategori-keterangan">🌿 Proyek Taman</div>
+    <div class="gallery">
+      <div class="gallery-item taman" style="display:block;">
+        <img src="WhatsApp Image 2025-06-16 at 15.31.12.jpeg" alt="Taman Vertikal">
+        <div class="gallery-caption">
+          <strong>Vertical Garden</strong><br>
+          Konsep: Taman dinding | Kesan: Modern & tropis | Tanaman: Pakis, anthurium, alocasia | Kelebihan: Hemat tempat, cocok indoor/lorong sempit | Catatan: Gunakan irigasi tetes otomatis.
+        </div>
+      </div>
+      <div class="gallery-item taman" style="display:block;">
+        <img src="WhatsApp Image 2025-06-16 at 16.13.41.jpeg" alt="Taman Tropis">
+        <div class="gallery-caption">
+          <strong>Taman Tropis Minimalis Indoor</strong><br>
+          Konsep: Indoor dengan lampu warm | Kesan: Cozy & elegan | Tanaman: Banana plant, pakis, lidah mertua | Elemen: Lantai kayu, batu kerikil | Catatan: Cocok untuk area semi-terbuka.
+        </div>
+      </div>
+      <div class="gallery-item taman" style="display:block;">
+        <img src="WhatsApp Image 2025-06-16 at 15.31.07 (2).jpeg" alt="Taman Jepang">
+        <div class="gallery-caption">
+          <strong>Japanese Garden</strong><br>
+          Konsep: Taman Jepang modern | Kesan: Harmonis & rapi | Elemen: Bonsai, batu alam, semak | Catatan: Perawatan bentuk sangat penting.
+        </div>
+      </div>
+      <div class="gallery-item taman" style="display:block;">
+        <img src="WhatsApp Image 2025-03-04 at 15.05.45.jpeg" alt="Taman Depan Rumah">
+        <div class="gallery-caption">
+          <strong>Taman Depan Rumah Tropis</strong><br>
+          Konsep: Taman tropis depan rumah | Kesan: Hijau adem | Elemen: Kamboja, rumput gajah mini | Catatan: Cocok halaman luas, perlu pemangkasan rutin.
+        </div>
+      </div>
+    </div>
+
+    <div class="kategori-keterangan">💧 Proyek Kolam</div>
+    <div class="gallery">
+      <div class="gallery-item kolam" style="display:block;">
+        <img src="WhatsApp Image 2025-06-16 at 15.30.56.jpeg" alt="Kolam Minimalis">
+        <div class="gallery-caption">
+          <strong>Kolam Minimalis</strong><br>
+          Desain simpel dengan garis tegas, menggunakan batu alam dan pencahayaan LED. Efisien dan modern.
+        </div>
+      </div>
+      <div class="gallery-item kolam" style="display:block;">
+        <img src="WhatsApp Image 2025-06-16 at 15.31.04.jpeg" alt="Natural Pond">
+        <div class="gallery-caption">
+          <strong>Natural Pond</strong><br>
+          Kolam alami dengan filter air, tanaman air, dan batu alami. Suasana menyatu dengan alam sekitar.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="testimoni" id="testimoni">
+    <h2>Testimoni Pelanggan</h2>
+    <div class="testi-box">
+      <p>"Pelayanan cepat dan hasil taman sangat memuaskan. Rumah jadi lebih sejuk dan indah!"</p>
+      <strong>— Ibu Rina, Sidoarjo</strong>
+    </div>
+    <div class="testi-box">
+      <p>"Kolam minimalis di halaman belakang bikin suasana rumah lebih tenang. Terima kasih Tree.Z Garden!"</p>
+      <strong>— Pak Dedi, Surabaya</strong>
+    </div>
+  </div>
+
+  <div class="container" id="kontak">
+    <h2>Hubungi Kami</h2>
+    <p>📱 WhatsApp: <a href="https://wa.me/6282139391806">0821-3939-1806</a></p>
+    <p>📍 Lokasi: Siap melayani area lokal dan luar kota</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Tree.Z Garden. All Rights Reserved.</p>
+    <p>📸 Instagram: <a href="https://www.instagram.com/treez.garden" target="_blank">@treez.garden</a></p>
+  </footer>
+
+</body>
+</html>
